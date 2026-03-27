@@ -1,0 +1,5 @@
+{
+    "appService.preDeployTask": "publish-release",
+    "appService.deploySubpath": "bin/Release/net10.0/publish",
+    "appService.defaultWebAppToDeploy": "/subscriptions/28d054f9-1519-496a-be16-b4cd3d56f82a/resourceGroups/DefaultResourceGroup-EUS2/providers/Microsoft.Web/sites/ajaymanagaon"
+}
