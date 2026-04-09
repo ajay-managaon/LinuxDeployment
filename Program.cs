@@ -2,19 +2,35 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddApplicationInsightsTelemetry();
+
+// Create logger
+var logger = LoggerFactory
+    .Create(logging =>
+    {
+        logging.AddConsole();
+    })
+    .CreateLogger("Program");
+
+logger.LogInformation("Ajay Managaon Application starting...");
 
 var app = builder.Build();
+
+logger.LogInformation("Application built successfully");
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
+    logger.LogInformation("Running in Production environment");
+
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
 app.UseHttpsRedirection();
 app.UseRouting();
+
+logger.LogInformation("Middleware configured");
 
 app.UseAuthorization();
 
@@ -25,5 +41,6 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}")
     .WithStaticAssets();
 
+logger.LogInformation("Application configured. Starting app...");
 
 app.Run();
