@@ -1,7 +1,0 @@
-/Users/ajaymanagaon/ProjectArea/LinuxDeployment/LinuxDeployment/bin/Release/net10.0/publish/LinuxDeployment
-/Users/ajaymanagaon/ProjectArea/LinuxDeployment/LinuxDeployment/bin/Release/net10.0/publish/appsettings.Development.json
-/Users/ajaymanagaon/ProjectArea/LinuxDeployment/LinuxDeployment/bin/Release/net10.0/publish/appsettings.json
-/Users/ajaymanagaon/ProjectArea/LinuxDeployment/LinuxDeployment/bin/Release/net10.0/publish/LinuxDeployment.dll
-/Users/ajaymanagaon/ProjectArea/LinuxDeployment/LinuxDeployment/bin/Release/net10.0/publish/LinuxDeployment.deps.json
-/Users/ajaymanagaon/ProjectArea/LinuxDeployment/LinuxDeployment/bin/Release/net10.0/publish/LinuxDeployment.runtimeconfig.json
-/Users/ajaymanagaon/ProjectArea/LinuxDeployment/LinuxDeployment/bin/Release/net10.0/publish/LinuxDeployment.pdb
