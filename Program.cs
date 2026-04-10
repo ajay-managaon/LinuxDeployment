@@ -1,25 +1,23 @@
+using Azure.Monitor.OpenTelemetry.AspNetCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddApplicationInsightsTelemetry();
+builder.Services.AddOpenTelemetry().UseAzureMonitor(options =>
+{
+    options.ConnectionString =
+        builder.Configuration["APPLICATIONINSIGHTS_CONNECTION_STRING"] ??
+        builder.Configuration["ApplicationInsights:ConnectionString"];
+});
 
-builder.Logging.ClearProviders();
 builder.Logging.AddConsole();
-builder.Logging.AddApplicationInsights();
 builder.Logging.SetMinimumLevel(LogLevel.Information);
 
-// Create logger
-var logger = LoggerFactory
-    .Create(logging =>
-    {
-        logging.AddConsole();
-    })
-    .CreateLogger("Program");
+var app = builder.Build();
+var logger = app.Logger;
 
 logger.LogInformation("Ajay Managaon Application starting...");
-
-var app = builder.Build();
 
 logger.LogInformation("Application built successfully");
 
